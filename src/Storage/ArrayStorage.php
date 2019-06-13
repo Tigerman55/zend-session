@@ -59,9 +59,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Retrieve the request access time
-     *
-     * @return float
+     * {@inheritDoc}
      */
     public function getRequestAccessTime()
     {
@@ -101,10 +99,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Lock this storage instance, or a key within it
-     *
-     * @param  null|int|string $key
-     * @return ArrayStorage
+     * {@inheritDoc}
      */
     public function lock($key = null)
     {
@@ -121,10 +116,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Is the object or key marked as locked?
-     *
-     * @param  null|int|string $key
-     * @return bool
+     * {@inheritDoc}
      */
     public function isLocked($key = null)
     {
@@ -157,10 +149,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Unlock an object or key marked as locked
-     *
-     * @param  null|int|string $key
-     * @return ArrayStorage
+     * {@inheritDoc}
      */
     public function unlock($key = null)
     {
@@ -192,9 +181,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Mark the storage container as isImmutable
-     *
-     * @return ArrayStorage
+     * {@inheritDoc}
      */
     public function markImmutable()
     {
@@ -204,9 +191,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Is the storage container marked as isImmutable?
-     *
-     * @return bool
+     * {@inheritDoc}
      */
     public function isImmutable()
     {
@@ -214,20 +199,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Set storage metadata
-     *
-     * Metadata is used to store information about the data being stored in the
-     * object. Some example use cases include:
-     * - Setting expiry data
-     * - Maintaining access counts
-     * - localizing session storage
-     * - etc.
-     *
-     * @param  string                     $key
-     * @param  mixed                      $value
-     * @param  bool                       $overwriteArray Whether to overwrite or merge array values; by default, merges
-     * @return ArrayStorage
-     * @throws Exception\RuntimeException
+     * {@inheritDoc}
      */
     public function setMetadata($key, $value, $overwriteArray = false)
     {
@@ -265,13 +237,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Retrieve metadata for the storage object or a specific metadata key
-     *
-     * Returns false if no metadata stored, or no metadata exists for the given
-     * key.
-     *
-     * @param  null|int|string $key
-     * @return mixed
+     * {@inheritDoc}
      */
     public function getMetadata($key = null)
     {
@@ -291,11 +257,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Clear the storage object or a subkey of the object
-     *
-     * @param  null|int|string            $key
-     * @return ArrayStorage
-     * @throws Exception\RuntimeException
+     * {@inheritDoc}
      */
     public function clear($key = null)
     {
@@ -323,12 +285,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Load the storage from another array
-     *
-     * Overwrites any data that was previously set.
-     *
-     * @param  array        $array
-     * @return ArrayStorage
+     * {@inheritDoc}
      */
     public function fromArray(array $array)
     {
@@ -340,10 +297,7 @@ class ArrayStorage extends ArrayObject implements StorageInterface
     }
 
     /**
-     * Cast the object to an array
-     *
-     * @param  bool $metaData Whether to include metadata
-     * @return array
+     * {@inheritDoc}
      */
     public function toArray($metaData = false)
     {

@@ -121,10 +121,7 @@ abstract class AbstractManager implements Manager
     }
 
     /**
-     * Set configuration object
-     *
-     * @param  Config $config
-     * @return AbstractManager
+     * {@inheritDoc}
      */
     public function setConfig(Config $config)
     {
@@ -133,9 +130,7 @@ abstract class AbstractManager implements Manager
     }
 
     /**
-     * Retrieve configuration object
-     *
-     * @return Config
+     * {@inheritDoc}
      */
     public function getConfig()
     {
@@ -143,10 +138,7 @@ abstract class AbstractManager implements Manager
     }
 
     /**
-     * Set session storage object
-     *
-     * @param  Storage $storage
-     * @return AbstractManager
+     * {@inheritDoc}
      */
     public function setStorage(Storage $storage)
     {
@@ -155,9 +147,7 @@ abstract class AbstractManager implements Manager
     }
 
     /**
-     * Retrieve storage object
-     *
-     * @return Storage
+     * {@inheritDoc}
      */
     public function getStorage()
     {
@@ -165,10 +155,7 @@ abstract class AbstractManager implements Manager
     }
 
     /**
-     * Set session save handler object
-     *
-     * @param  SaveHandler $saveHandler
-     * @return AbstractManager
+     * {@inheritDoc}
      */
     public function setSaveHandler(SaveHandler $saveHandler)
     {
@@ -177,9 +164,7 @@ abstract class AbstractManager implements Manager
     }
 
     /**
-     * Get SaveHandler Object
-     *
-     * @return SaveHandler
+     * {@inheritDoc}
      */
     public function getSaveHandler()
     {

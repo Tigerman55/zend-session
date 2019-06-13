@@ -81,9 +81,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Does a session exist and is it currently active?
-     *
-     * @return bool
+     * {@inheritDoc}
      */
     public function sessionExists()
     {
@@ -101,16 +99,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Start session
-     *
-     * if No session currently exists, attempt to start it. Calls
-     * {@link isValid()} once session_start() is called, and raises an
-     * exception if validation fails.
-     *
-     * @param bool $preserveStorage        If set to true, current session storage will not be overwritten by the
-     *                                     contents of $_SESSION.
-     * @return void
-     * @throws Exception\RuntimeException
+     * {@inheritDoc}
      */
     public function start($preserveStorage = false)
     {
@@ -183,10 +172,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Destroy/end a session
-     *
-     * @param  array $options See {@link $defaultDestroyOptions}
-     * @return void
+     * {@inheritDoc}
      */
     public function destroy(array $options = null)
     {
@@ -211,11 +197,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Write session to save handler and close
-     *
-     * Once done, the Storage object will be marked as isImmutable.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public function writeClose()
     {
@@ -240,14 +222,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Attempt to set the session name
-     *
-     * If the session has already been started, or if the name provided fails
-     * validation, an exception will be raised.
-     *
-     * @param  string $name
-     * @return SessionManager
-     * @throws Exception\InvalidArgumentException
+     * {@inheritDoc}
      */
     public function setName($name)
     {
@@ -269,11 +244,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Get session name
-     *
-     * Proxies to {@link session_name()}.
-     *
-     * @return string
+     * {@inheritDoc}
      */
     public function getName()
     {
@@ -288,12 +259,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Set session ID
-     *
-     * Can safely be called in the middle of a session.
-     *
-     * @param  string $id
-     * @return SessionManager
+     * {@inheritDoc}
      */
     public function setId($id)
     {
@@ -307,11 +273,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Get session ID
-     *
-     * Proxies to {@link session_id()}
-     *
-     * @return string
+     * {@inheritDoc}
      */
     public function getId()
     {
@@ -319,13 +281,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Regenerate id
-     *
-     * Regenerate the session ID, using session save handler's
-     * native ID generation Can safely be called in the middle of a session.
-     *
-     * @param  bool $deleteOldSession
-     * @return SessionManager
+     * {@inheritDoc}
      */
     public function regenerateId($deleteOldSession = true)
     {
@@ -337,12 +293,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Set the TTL (in seconds) for the session cookie expiry
-     *
-     * Can safely be called in the middle of a session.
-     *
-     * @param  null|int $ttl
-     * @return SessionManager
+     * {@inheritDoc}
      */
     public function rememberMe($ttl = null)
     {
@@ -354,11 +305,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Set a 0s TTL for the session cookie
-     *
-     * Can safely be called in the middle of a session.
-     *
-     * @return SessionManager
+     * {@inheritDoc}
      */
     public function forgetMe()
     {
@@ -367,12 +314,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Set the validator chain to use when validating a session
-     *
-     * In most cases, you should use an instance of {@link ValidatorChain}.
-     *
-     * @param  EventManagerInterface $chain
-     * @return SessionManager
+     * {@inheritDoc}
      */
     public function setValidatorChain(EventManagerInterface $chain)
     {
@@ -381,11 +323,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Get the validator chain to use when validating a session
-     *
-     * By default, uses an instance of {@link ValidatorChain}.
-     *
-     * @return EventManagerInterface
+     * {@inheritDoc}
      */
     public function getValidatorChain()
     {
@@ -396,12 +334,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Is this session valid?
-     *
-     * Notifies the Validator Chain until either all validators have returned
-     * true or one has failed.
-     *
-     * @return bool
+     * {@inheritDoc}
      */
     public function isValid()
     {
@@ -428,11 +361,7 @@ class SessionManager extends AbstractManager
     }
 
     /**
-     * Expire the session cookie
-     *
-     * Sends a session cookie with no value, and with an expiry in the past.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public function expireSessionCookie()
     {
